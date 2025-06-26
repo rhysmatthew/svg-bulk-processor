@@ -10,10 +10,14 @@
 <p>
   This tool will read all the SVG files from the input directory, trim the whitespace around them, and then save them to the output directory.
 </p>
+
+<p>Found <strong>{{svgCount}}</strong> SVG files in your source directory.</p>
+
 <ul>
   <li>Input directory: <code>{{inputDirectory}}</code></li>
   <li>Output directory: <code>{{outputDirectory}}</code></li>
 </ul>
+
 <p>
   <form action="/crop" method="post">
     <button type="submit" name="start" value="1">Start</button>

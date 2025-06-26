@@ -139,6 +139,7 @@ export const runServer = async ({
     const html = welcomeTemplate({
       inputDirectory: svgDir,
       outputDirectory: outDir,
+      svgCount: svgFiles.length
     });
     response.send(html);
   });
