@@ -5,4 +5,4 @@ cropped
 svg
 font
 .DS_Store
-input/*
+input/*.svg
