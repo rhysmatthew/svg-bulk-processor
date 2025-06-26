@@ -1,0 +1,8 @@
+node_modules
+dist
+out
+cropped
+svg
+font
+.DS_Store
+input/*
