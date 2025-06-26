@@ -1,6 +1,6 @@
 # SVG Bulk Processor
 
-Built upon SVG Iconset Cropper (https://github.com/jgillick/SVGIconsetCropper), but adapted for specific use case. Additionally this tool will rename all files to a pattern of 'icon--name.svg' etc. It will also convert all fill attributes to 'currentColor'. 
+Built upon SVG Iconset Cropper (https://github.com/jgillick/SVGIconsetCropper), but adapted for specific use case. Additionally this tool will rename all files with a pattern of 'icon--{name}.svg'. It will also convert all fill attributes to 'currentColor'. 
 
 This tool automatically trims the whitespace from around a batch of SVG icons, using the method developed by the awesome [svgcrop.com](https://svgcrop.com/) ([source](https://github.com/sdennett55/svg_crop/)).
 
