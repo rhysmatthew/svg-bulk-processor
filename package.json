@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "cropper": "yarn build; yarn server-static; node ./dist/index",
+    "process": "yarn build; yarn server-static; node ./dist/index",
     "server-static": "cp -r ./src/templates ./dist/ && cp -r ./src/static/*.css ./dist/static/"
   },
   "author": "Rhys Matthew",

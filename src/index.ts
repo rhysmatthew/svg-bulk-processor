@@ -17,7 +17,7 @@ const DEFAULT_OUT = `./cropped`;
 
 function parseArgs(): { dir: string; out: string; port: number, isOutline: boolean } {
   const parser = new ArgumentParser({
-    prog: "yarn cropper",
+    prog: "yarn process",
     description: "Trim the whitespace from a directory of SVG icons.",
   });
 

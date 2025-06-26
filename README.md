@@ -20,16 +20,16 @@ yarn install
 
 ### 2. Add your source SVGs into /input or other source folder
 
-### 3. Start the cropper tool server
+### 3. Start the SVG Bulk Processor server
 
 ```shell
-yarn cropper
+yarn process
 
 # Alternatively, you can specify the input and output directories
-yarn cropper --in ./icons --out ./cropped/
+yarn process --in ./icons --out ./cropped/
 
 # Add the outline flag to append '-outline' to the filenames, useful for duplicate icons that are the outlined versions of the same icon. 
-yarn cropper --is-outline=true
+yarn process --is-outline=true
 ```
 
 ### 4. Crop SVGs
