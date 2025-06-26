@@ -15,7 +15,7 @@ process.on("SIGINT", forceExit);
 const DEFAULT_IN = `./input`;
 const DEFAULT_OUT = `./cropped`;
 
-function parseArgs(): { dir: string; out: string; port: number } {
+function parseArgs(): { dir: string; out: string; port: number, isOutline: boolean } {
   const parser = new ArgumentParser({
     prog: "yarn cropper",
     description: "Trim the whitespace from a directory of SVG icons.",
@@ -38,6 +38,12 @@ function parseArgs(): { dir: string; out: string; port: number } {
     help: "The port number for the converter server.",
   });
 
+  parser.add_argument("--is-outline", {
+    dest: "isOutline",
+    default: false,
+    help: "Whether -outline should be added to the SVG filenames",
+  });
+
   return parser.parse_args();
 }
 
@@ -46,6 +52,7 @@ async function main() {
   const args = parseArgs();
   const dir = path.resolve(args.dir);
   const out = path.resolve(args.out);
+  const isOutline = args.isOutline;
 
   if (dir === out) {
     console.log(
@@ -77,6 +84,6 @@ async function main() {
   console.log(` * output directory: ${out}\n`);
 
   // Start server
-  await runServer({ svgDir: dir, outDir: out, port: args.port });
+  await runServer({ svgDir: dir, outDir: out, port: args.port, isOutline: args.isOutline });
 }
 main();

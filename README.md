@@ -27,6 +27,9 @@ yarn cropper
 
 # Alternatively, you can specify the input and output directories
 yarn cropper --in ./icons --out ./cropped/
+
+# Add the outline flag to append '-outline' to the filenames, useful for duplicate icons that are the outlined versions of the same icon. 
+yarn cropper --is-outline=true
 ```
 
 ### 4. Crop SVGs

@@ -39,7 +39,7 @@ const saveSvg = async (
   outDir: string,
   name: string,
   content: string,
-  outline: boolean = false // Pass this flag as needed
+  isOutline: boolean = false // Pass this flag as needed
 ) => {
   // unencode HTML
   content = content.replace(/&lt;/g, "<").replace(/&gt;/g, ">");
@@ -58,7 +58,7 @@ const saveSvg = async (
   iconName = iconName.replace(/^-+/, "").replace(/-+$/, "").replace(/-+/g, "-");
 
   // Append '-outline' if needed
-  if (outline) {
+  if (isOutline) {
     iconName = `${iconName}-outline`;
   }
 
@@ -95,10 +95,12 @@ export const runServer = async ({
   svgDir,
   outDir,
   port,
+  isOutline
 }: {
   svgDir: string;
   outDir: string;
   port: number;
+  isOutline: boolean;
 }) => {
   let currentIdx = 0;
   let hasStatus = false;
@@ -163,7 +165,7 @@ export const runServer = async ({
       const svgContent = Buffer.from(content, "base64").toString("utf8");
       printStatusLog("Saving");
       currentIdx++;
-      await saveSvg(outDir, name, svgContent);
+      await saveSvg(outDir, name, svgContent, isOutline);
     }
 
     // That was the last file
